@@ -1,0 +1,1290 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+:root {
+  --body-text-clr: #333;
+  --heading-text-clr: #264f73;
+  --accent-clr: #42cde7;
+  --cta-clr: #d43718;
+  --light-gray: rgb(245, 245, 245);
+  --fancy-ff: "Playfair Display", serif;
+  --simple-ff: "Montserrat", sans-serif;
+}
+
+body {
+  margin: 0;
+  line-height: 1.5;
+  font-size: calc(0.9rem + 0.15vw);
+  font-family: var(--simple-ff);
+  font-weight: 400;
+  color: var(--body-text-clr);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--fancy-ff);
+  margin: 0;
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: clamp(1.7rem, 4vw, 2rem);
+}
+
+h3 {
+  font-size: calc(1.3rem + 0.15vw);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+p:not(.copywrite-section-text) {
+  max-width: 45ch;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+}
+
+strong {
+  font-weight: 700;
+}
+
+.pos-rel {
+  position: relative;
+}
+
+.d-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page-container {
+  width: 92%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+
+/* Header */
+
+.header {
+  padding: 0.5em 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: white;
+  z-index: 1000;
+}
+
+.nav {
+  text-align: center;
+  visibility: hidden;
+  max-height: 0;
+  position: absolute;
+}
+
+#menu-btn:checked ~ .nav {
+  visibility: visible;
+  max-height: 100%;
+  position: relative;
+}
+
+.logo-link-home {
+  color: var(--heading-text-clr);
+}
+
+.logo-text {
+  font-size: 1.8125rem;
+  font-family: var(--fancy-ff);
+  line-height: 1;
+  text-transform: uppercase;
+  padding-bottom: 0.2rem;
+}
+
+.menu-list {
+  list-style-type: none;
+  text-transform: uppercase;
+}
+
+.menu-link {
+  color: var(--body-text-clr);
+  text-decoration: none;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+}
+
+.menu-link {
+  display: block;
+}
+
+.menu-link,
+.submenu-summary {
+  margin-top: 2rem;
+}
+
+.menu-link[href*="testimonials"] {
+  margin-bottom: 2rem;
+}
+
+.submenu-summary {
+  outline: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.menu-item-good-fit {
+  display: none;
+}
+
+/**/
+
+
+/* Mobile Menu Button */
+
+#menu-btn {
+  display: none;
+}
+
+.toggle-mobile-nav-btn {
+  height: 3.125em;
+  width: 3.125em;
+  padding: 0;
+  background-color: white;
+  position: fixed;
+  top: 1rem;
+  right: 1.5rem;
+  cursor: pointer;
+}
+
+.hamburger {
+  display: block;
+  position: relative;
+  top: 50%;
+  transform: translate(0%, -50%);
+  margin: 0 auto;
+}
+
+.hamburger::before {
+  top: calc(-1 * var(--buns-distance));
+}
+
+.hamburger::after {
+  top: var(--buns-distance);
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  display: block;
+  position: absolute;
+  --buns-distance: 0.5rem;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  width: 30px;
+  height: 4px;
+  border-radius: 100px;
+  background-color: black;
+}
+
+/**/
+
+
+/* Call to Action buttons */
+
+.cta {
+  background-color: var(--cta-clr);
+  font-size: 1rem;
+  font-size: clamp(0.6rem, 2vw, 0.875rem);
+  color: white;
+  font-weight: 500;
+  padding: 1em 1.5em;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 0.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.mobile-cta-container {
+  background-color: rgb(255, 255, 255, 0.5);
+  position: sticky;
+  bottom: 0;
+  z-index: 100;
+  width: 100vw;
+  padding: 0.5em 0;
+}
+
+.mobile-cta {
+  margin: 0 auto;
+  letter-spacing: 0.1em;
+  font-size: calc(0.8rem + 0.1vw);
+  font-weight: 500;
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+/**/
+
+
+/* Hero Section */
+
+.hero-section {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("images/girls-swimming.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 auto;
+  max-width: 1400px;
+}
+
+.hero-container {
+  text-align: center;
+  margin: 0 auto;
+  color: white;
+  padding: 9em 0 5em;
+  width: 75%;
+  max-width: 700px;
+}
+
+.hero-heading {
+  font-size: calc(2.5rem + 2vw);
+  margin-bottom: 0.5rem;
+}
+
+.hero-subheading {
+  font-size: 1.375rem;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-weight: 400;
+  margin: 0 auto;
+  margin-bottom: 1em;
+}
+
+/**/
+
+
+/* Problem-Solution Section */
+
+.prob-sol-section {
+  padding: 3em 0;
+}
+
+.prob-sol-img {
+  height: 70vh;
+  background-image: url(images/pool-ladder-resized.jpg);
+  background-size: cover;
+  background-position: center bottom;
+}
+
+.prob-sol-text {
+  background-color: #dbe6f4;
+  padding: 1em;
+}
+
+.prob-sol-headline {
+  color: var(--heading-text-clr);
+  font-weight: 500;
+}
+
+.prob-sol-text p {
+  margin-top: 1.6rem;
+}
+
+/**/
+
+
+/* Benefits Section */
+
+.benefits-section {
+  padding: 3em 0;
+  text-align: center;
+  background-color: #f2fbfd;
+}
+
+.benefits-section-title {
+  margin-bottom: 1em;
+}
+
+.benefit-para {
+  margin-inline: auto;
+  max-width: 350px;
+}
+
+.benefits-section-title,
+.benefit-title {
+  color: var(--heading-text-clr);
+}
+
+.fa-thumbs-up,
+.fa-smile,
+.fa-clock {
+  margin-bottom: 0.2em;
+}
+
+.fa-thumbs-up,
+.fa-smile {
+  margin-top: 0.3em;
+}
+
+.fa-clock {
+  font-size: 3rem;
+  background-color: #c0f0f9;
+  color: #264f73;
+  padding: 2rem;
+  border-radius: 100%;
+}
+
+.fa-thumbs-up {
+  font-size: 3rem;
+  background-color: #c3f9bf;
+  color: #264f73;
+  padding: 2rem;
+  border-radius: 100%;
+}
+
+.fa-smile {
+  font-size: 3rem;
+  background-color: #ffe7b5;
+  color: #264f73;
+  padding: 2rem;
+  border-radius: 100%;
+}
+
+/**/
+
+
+/* Process plan section */
+
+.process-plan-section-container {
+  background-color: #dbe6f4;
+}
+
+.process-plan-text-container {
+  padding: 3em 0;
+}
+
+.process-plan-text-container p {
+  margin: 0;
+}
+
+.process-plan-title {
+  margin-bottom: 1em;
+}
+
+.process-plan-title,
+.step-title {
+  color: var(--heading-text-clr);
+}
+
+.process-plan-subtitle,
+.step-title {
+  text-transform: uppercase;
+}
+
+.step-number {
+  font-size: 1.1rem;
+}
+
+h3.step-title {
+  font-family: var(--simple-ff);
+  font-size: 0.8rem;
+  font-weight: 400;
+  margin: 0.5em 0;
+}
+
+p.process-plan-subtitle {
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+div.step-container {
+  margin: 2em 0;
+}
+
+p.step-para {
+  margin-top: 0.75rem;
+  max-width: 350px;
+}
+
+.proc-plan-divider {
+  border-top: 1px solid var(--accent-clr);
+  border-bottom: 1px solid var(--accent-clr);
+  margin-left: 0;
+  max-width: 350px;
+}
+
+.process-plan-image {
+  background-image: url(images//feet-in-pool-resized.jpg);
+  background-size: cover;
+  min-height: 200px;
+  background-position-y: 50%;
+  order: 2;
+}
+
+/**/
+
+
+/* Avoid Disaster Section */
+
+.avoid-disaster-image-and-headline-container {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("images/lady-relaxing-in-pool.jpg");
+  background-size: cover;
+  background-position-y: 40%;
+  padding: 5em 0;
+  color: white;
+  margin-bottom: 2em;
+  display: flex;
+  align-items: center;
+}
+
+.avoid-disaster-img-text {
+  width: 40%;
+  margin-left: 4%;
+  font-size: 3rem;
+  font-size: clamp(1.7rem, 4.5vw, 3rem);
+}
+
+.avoid-disaster-headline-finish {
+  font-family: var(--simple-ff);
+  font-style: italic;
+  font-weight: 600;
+}
+
+/**/
+
+
+/* Testimonials Section */
+
+.testimonials-section {
+  padding: 0.1em 0 0;
+  background-color: var(--light-gray);
+}
+
+.testimonials-section-headline {
+  text-align: center;
+  margin: 1em auto;
+  text-transform: capitalize;
+  font-family: var(--simple-ff);
+  font-weight: 500;
+}
+
+.testimonials-section-image-and-link-wrapper {
+  background-color: var(--light-gray);
+  padding-bottom: 0.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.testimonials-section-image {
+  background-image: url("images/Magley.JPG");
+  background-size: cover;
+  min-height: 200px;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 300px;
+  background-position-x: 45%;
+}
+
+.link-to-testimonials-page {
+  text-align: center;
+  text-decoration: none;
+  color: rgb(0, 0, 180);
+  display: block;
+  margin-top: 0.4em;
+}
+
+.testimonials-section-text-wrapper {
+  background-color: #fff;
+  padding: 1.5em 0;
+}
+
+.quote-name-five-stars-container {
+  max-width: 75ch;
+}
+
+.magley-quote {
+  margin: 0;
+  padding: 0.5em 0;
+}
+
+.magley-name {
+  display: block;
+  margin-bottom: 0.1em;
+  font-family: var(--simple-ff);
+  font-weight: 500;
+}
+
+.fa-star {
+  color: #ffc83d;
+}
+
+/**/
+
+
+/* Features Section  */
+
+.features-section {
+  padding: 3.5em 0 3em;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("images/pool-water.jpg");
+  background-size: cover;
+  max-width: 1400px;
+  margin: 0 auto;
+  color: white;
+}
+
+.features-section-wrapper {
+  margin: 0 auto;
+}
+
+.features-section-headline {
+  font-family: var(--simple-ff);
+  font-weight: 500;
+}
+
+.features-list-1-through-5 {
+  margin-bottom: 0;
+}
+
+.features-list-6-through-10 {
+  margin-top: 0;
+}
+
+.features-list .list-item {
+  font-size: calc(0.9rem + 0.15vw);
+  font-weight: 500;
+  margin-top: 0.4em;
+}
+
+.list-item::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f00c";
+  font-weight: 900;
+  display: inline-block;
+  margin-right: 0.3em;
+}
+
+/**/
+
+
+/* FAQs Section */
+
+.faqs-section {
+  padding: 3em 0;
+  background-image: linear-gradient(
+      hsla(0, 0%, 100%, 0.85),
+      hsla(0, 0%, 100%, 0.85)
+    ),
+    url("images/float-in-pool.jpg");
+  background-size: cover;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.faqs-section-headline {
+  margin-bottom: 0.5em;
+  text-align: center;
+  font-family: var(--simple-ff);
+  font-weight: 500;
+}
+
+.faq-question {
+  font-family: var(--fancy-ff);
+  font-weight: 600;
+  margin-top: 2em;
+  text-transform: uppercase;
+}
+
+.faqs-wrapper hr {
+  text-align: left;
+}
+
+.faqs-section hr {
+  color: var(--heading-text-clr);
+}
+
+.hero-faq-6-answer-para {
+  margin-bottom: 0;
+}
+
+/**/
+
+
+/* Footer */
+
+.footer {
+  background-color: #001c38;
+}
+
+.footer-primary-content {
+  padding: 2em 0;
+  color: #fff;
+}
+
+.footer-company-name {
+  text-transform: uppercase;
+}
+
+.footer-phone-number,
+.footer-email {
+  color: #7fe692;
+}
+
+.social-icon {
+  width: 2em;
+  font-size: 1.3rem;
+  margin-right: 0.25em;
+  background-color: #364c62;
+  padding: 0.5em;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.footer__our-location-title {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  font-family: var(--simple-ff);
+  font-weight: 400;
+}
+
+.map-of-location {
+  background-image: url(images/map-dillard-pools-location.png);
+  background-size: cover;
+  min-height: 300px;
+}
+
+.copywrite-section {
+  background-color: #000;
+  color: white;
+}
+
+.privacy-policy-section,
+.copywrite-section {
+  padding: 1em 0;
+  font-size: 0.8rem;
+}
+
+.privacy-policy-section {
+  text-align: center;
+  background-color: #fff;
+}
+
+.privacy-policy-text {
+  color: inherit;
+}
+
+/**/
+
+
+/* PRICING PAGE & INTERNAL HEADER */
+
+.pricing-option {
+  margin: 0 auto;
+  max-width: 50ch;
+}
+
+.pricing-option {
+  border: 0.5rem solid #f3f4fa;
+  padding: 1.5em;
+}
+
+.pricing-option i {
+  font-size: 2rem;
+  color: #42cde7;
+}
+
+.pricing-icon-and-title-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.pricing-page-container {
+  padding: 0 0 3em;
+}
+
+.pricing-page-title {
+  margin-bottom: calc(0.8em + 1vw);
+  margin-top: calc(0.8em + 1vw);
+}
+
+.internal-header,
+.pricing-page-title {
+  text-align: center;
+}
+
+.pricing-page-title,
+.pricing-option-title {
+  font-family: var(--simple-ff);
+  font-weight: 600;
+}
+
+.internal-header {
+  padding: calc(2em + 1vw);
+  background-color: var(--heading-text-clr);
+  color: #fff;
+  line-height: 1.2;
+}
+
+.pricing-page-title,
+.price {
+  color: var(--heading-text-clr);
+}
+
+.pricing-option + .pricing-option {
+  margin-top: 2em;
+}
+
+.price {
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+  font-weight: 600;
+}
+
+.price-para {
+  margin-top: 0;
+}
+
+/**/
+
+
+/* TESTIMONIALS PAGE */
+
+.testimonials-page-container {
+  padding: calc(2em + 1vw) 0;
+}
+
+.testimonials-content-container {
+  margin: 0 auto;
+}
+
+.testimonial-container + .testimonial-container {
+  margin-top: 4em;
+}
+
+.customer-photo-container {
+  min-height: 100px;
+  max-width: 150px;
+  margin: 0 auto 0.5em;
+}
+
+.fielding-img,
+.vogt-img,
+.magley-img {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.fielding-img {
+  background-image: url(images/Fielding.jpg);
+  background-position-y: 40%;
+}
+
+.vogt-img {
+  background-image: url(images/Vogt.jpg);
+  background-position-x: 0%;
+}
+
+.magley-img {
+  background-image: url(images/Magley.JPG);
+  background-position-x: 40%;
+}
+
+.customer-name,
+.testimonial {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.customer-name {
+  font-weight: 500;
+  margin-top: 0.5em;
+}
+
+.testimonials-page-five-stars-container {
+  display: flex;
+  justify-content: center;
+}
+
+/**/
+
+
+/* SCHEDULE AN APPOINTMENT PAGE */
+
+.apointment-page-container {
+  padding: 2em 0;
+  text-align: center;
+}
+
+.appointment-page-title,
+.request-a-call-back {
+  color: var(--heading-text-clr);
+  font-family: var(--simple-ff);
+  font-weight: 600;
+  z-index: 100;
+}
+
+.appt-para {
+  margin: 0 auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.appt-para:first-of-type {
+  margin-top: 2em;
+}
+
+.calendly-container {
+  border: 0.15em solid var(--heading-text-clr);
+  margin-top: 1.5em;
+  z-index: 0;
+}
+
+.calendly-inline-widget {
+  min-height: 1060px;
+}
+
+/**/
+
+
+/* ABOUT PAGE */
+
+.about-us-page-container {
+  padding: 2em 0;
+}
+
+.about-subheading {
+  color: var(--heading-text-clr);
+  font-weight: 600;
+  font-family: var(--fancy-ff);
+  font-size: calc(1.1rem + 0.15vw);
+}
+
+.about-belief-statement {
+  line-height: 1.2;
+  max-width: 25ch;
+  font-size: calc(1.5rem + 1vw);
+}
+
+.about-para:last-of-type {
+  font-weight: 900;
+  font-size: calc(1rem + 0.15vw);
+  color: var(--heading-text-clr);
+}
+
+/**/
+
+
+/* FAQ PAGE */
+
+.faq-page-container {
+  padding: 3em 0;
+  background-image: linear-gradient(
+      hsla(0, 0%, 100%, 0.85),
+      hsla(0, 0%, 100%, 0.85)
+    ),
+    url("images/float-in-pool.jpg");
+  background-size: cover;
+}
+
+.faq-page-title {
+  margin-bottom: 1.5em;
+  text-transform: capitalize;
+  text-align: center;
+  font-family: var(--simple-ff);
+  font-weight: 600;
+}
+
+.faq-container:not(.first-faq-container) {
+  margin-top: 3em;
+}
+
+.faq {
+  text-transform: uppercase;
+  font-size: calc(1rem + 0.15vw);
+  line-height: 1.4;
+}
+
+.faq-container hr {
+  color: var(--heading-text-clr);
+  max-width: 10ch;
+  margin-left: 0;
+}
+
+.faq-phone-number {
+  color: #5eac6b;
+}
+
+/**/
+
+
+/* Media Queries */
+
+/* Mobile */
+@media (max-width: 599px) {
+  .prob-sol-img,
+  .process-plan-image {
+    display: none;
+  }
+}
+
+/* Tablet - portrait */
+@media screen and (min-width: 600px) {
+  .prob-sol-img {
+    max-height: 200px;
+    background-position-y: 50%;
+  }
+
+  .prob-sol-headline {
+    margin-top: 0.4em;
+  }
+
+  .all-benefits-container {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1.5em;
+  }
+
+  /* resetting margin */
+  .fa-thumbs-up,
+  .fa-smile {
+    margin-top: 0;
+  }
+
+  .benefit-para {
+    margin-bottom: 0;
+  }
+
+  .process-plan-steps-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1.5em;
+  }
+
+  .avoid-disaster-para {
+    max-width: 500px;
+  }
+
+  .testimonials-section {
+    padding: 3em 0;
+  }
+
+  .testimonials-image-link-and-text-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin: 0 auto;
+    width: 80%;
+    max-width: 1400px;
+  }
+
+  .testimonials-section-image-and-link-wrapper {
+    width: 40%;
+  }
+
+  .testimonials-section-text-wrapper {
+    width: 60%;
+  }
+
+  .testimonials-section-headline {
+    margin: 0 auto 1em;
+  }
+
+  .features-lists-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+  }
+
+  .features-section-headline {
+    margin-bottom: 1em;
+    text-align: center;
+  }
+
+  .features-list {
+    margin-top: 0;
+  }
+
+  .faq1-and-faq2,
+  .faq3-and-faq4,
+  .faq5-and-faq6 {
+    display: flex;
+    gap: 6em;
+  }
+
+  .hero-faq-1-wrapper,
+  .hero-faq-2-wrapper,
+  .hero-faq-3-wrapper,
+  .hero-faq-4-wrapper,
+  .hero-faq-5-wrapper,
+  .hero-faq-6-wrapper {
+    width: 50%;
+  }
+
+  .footer-primary-content {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    margin: 0 auto;
+    width: 92%;
+    max-width: 1400px;
+  }
+
+  .testimonial-container {
+    display: flex;
+    width: 70%;
+    max-width: 70ch;
+    margin: 0 auto;
+    gap: 1em;
+    align-items: center;
+  }
+
+  .customer-photo-container {
+    height: 100px;
+    width: 150px;
+    margin: 0;
+  }
+
+  /* About Us Page */
+  .about-us-page-container {
+    display: flex;
+    gap: 3.7vw;
+  }
+
+  .about-text-container {
+    border-left: 0.25em solid var(--heading-text-clr);
+    padding-left: 4vw;
+  }
+  /**/
+
+  /* FAQ Page */
+  .faq-row {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .faq-container {
+    width: 45%;
+  }
+
+  .faq-row + .faq-row {
+    margin-top: 2em;
+  }
+
+  .faq-container:not(.first-faq-container) {
+    margin-top: 0;
+  }
+  /**/
+}
+
+/* CALENDLY REMOVE OUTLINE */
+
+@media screen and (min-width: 709px) {
+  .calendly-container {
+    border: 0;
+    z-index: 0;
+    margin-top: -2.5em;
+  }
+}
+/**/
+
+/* Tablet - landscape */
+@media screen and (min-width: 900px) {
+  .prob-sol-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .prob-sol-img {
+    max-height: 500px;
+  }
+
+  .prob-sol-img,
+  .prob-sol-text {
+    width: 50%;
+  }
+
+  .prob-sol-headline {
+    margin-top: 0;
+  }
+
+  .process-plan-section-container {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .process-plan-text-container {
+    width: 60%;
+    padding-inline: 2em;
+  }
+
+  .process-plan-image {
+    width: 40%;
+  }
+
+  .avoid-disaster-container {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .avoid-disaster-image-and-headline-container,
+  .avoid-disaster-text-and-cta-button {
+    width: 50%;
+  }
+
+  .avoid-disaster-image-and-headline-container {
+    margin-bottom: 0;
+  }
+
+  .avoid-disaster-text-and-cta-button {
+    padding: 2em;
+  }
+
+  .avoid-disaster-img-text {
+    margin-left: 6%;
+  }
+
+  .avoid-disaster-image-and-headline-container {
+    background-position-x: 30%;
+  }
+
+  .pricing-option-container {
+    display: flex;
+    gap: 1em;
+  }
+
+  /* reset margin */
+  .pricing-option + .pricing-option {
+    margin-top: 0em;
+  }
+}
+
+/* DESKTOP VIEW */
+@media (min-width: 1280px) {
+  .toggle-mobile-nav-btn,
+  .mobile-cta-container {
+    display: none;
+  }
+
+  .header .page-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .nav {
+    visibility: visible;
+    position: relative;
+    max-height: 100%;
+  }
+
+  .menu-list {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  .menu-item + .menu-item {
+    margin-left: 1.5rem;
+  }
+
+  .nav .menu-link {
+    margin: 0;
+  }
+
+  .submenu-details {
+    display: none;
+    margin-right: 1.5rem;
+    position: relative;
+  }
+
+  /* SUBMENU */
+
+  .menu-item-good-fit {
+    display: block;
+  }
+
+  .menu-item-good-fit::after {
+    font-family: "Font Awesome 5 Free";
+    content: "\f0d7";
+    font-weight: 900;
+    display: inline-block;
+    margin-left: 0.3em;
+    color: var(--body-text-clr);
+    opacity: 0.7;
+  }
+
+  .menu-item-good-fit {
+    position: relative;
+    font-size: 0.875rem;
+    cursor: pointer;
+  }
+
+  .submenu-list {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    display: none;
+    background-color: white;
+  }
+
+  .menu-item-good-fit:hover > .submenu-list {
+    display: block;
+  }
+
+  .submenu-item {
+    padding: 0.75em 0;
+  }
+
+  .submenu-item:first-of-type {
+    margin-top: 1em;
+  }
+
+  .submenu-item:hover {
+    background-color: #f4f4f4;
+  }
+
+  .submenu-link {
+    color: var(--body-text-clr);
+    font-size: 0.875rem;
+    padding-inline: 2em;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 1280px) {
+  .menu-item .cta,
+  .avoid-disaster-cta-btn {
+    display: none;
+  }
+}
