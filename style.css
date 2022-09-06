@@ -989,8 +989,13 @@ p.step-para {
     gap: 1.5em;
   }
 
+  .avoid-disaster-headline-finish {
+    text-align: center;
+  }
+
   .avoid-disaster-para {
     max-width: 500px;
+    margin: 0 auto;
   }
 
   .testimonials-section {
