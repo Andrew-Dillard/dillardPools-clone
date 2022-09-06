@@ -504,7 +504,7 @@ p.step-para {
 }
 
 .testimonials-section-image {
-  background-image: url("images/Magley.JPG");
+  background-image: url("images/Magley.jpg");
   background-size: cover;
   min-height: 200px;
   width: 100%;
@@ -814,7 +814,7 @@ p.step-para {
 }
 
 .magley-img {
-  background-image: url(images/Magley.JPG);
+  background-image: url(images/Magley.jpg);
   background-position-x: 40%;
 }
 
